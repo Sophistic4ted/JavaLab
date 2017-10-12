@@ -3,16 +3,13 @@ package myPackage;
 
 public class MacierzProgram {
 	public static void main(String [] argv) {
-		// pobranie limitu
-		 	Macierz matrix = new Macierz();
-	        int[][] result1 = Macierz.add(matrix.A, matrix.B);
-	        Macierz.wypiszMacierz(result1);
-	        
-	        int[][] result2 = Macierz.sub(matrix.A, matrix.B);
-	        Macierz.wypiszMacierz(result2);	        
-	        int[][] result3 = Macierz.mul(matrix.A, matrix.B);
-	        Macierz.wypiszMacierz(result3);
-		//utworzenie listy z odpowiednia iloscia elementow
+				int[][] A = {{1,1},{1,1}};
+    		 	Macierz matrix = new Macierz(A);
+    		 	int[][] B = {{1,2},{3,4}};
+    	        Macierz.wypiszMacierz(matrix.add(B));	    	        
+    	        Macierz.wypiszMacierz(matrix.sub(B));      
+    	        Macierz.wypiszMacierz(matrix.mul(B));	
+	    	  
 
 }
 }

@@ -2,18 +2,23 @@ package myPackage;
 
 
 public class Macierz {
-	 int[][] A = { { 1, 1 }, { 1, 1 } };
-	 int[][] B = { { 1, 2 }, { 3, 4 } };
+	int aRows;
+    int aColumns;
+    int[][] A;
+    public Macierz(int[][] _A){
+    	   aRows = _A.length;
+	       aColumns =_A[0].length;
+	       A=_A;
 
-	 public static int[][] add(int[][] A, int[][] B) {
+    }
 
-	        int aRows = A.length;
-	        int aColumns = A[0].length;
+
+	 public int[][] add(int[][] B) {
 	        int bRows = B.length;
-	        int bColumns = B[0].length;
+	        int bColumns = B[0].length;    
 
 	        if (aColumns != bColumns || aRows != bRows ) {
-	            throw new IllegalArgumentException("A:Rows: " + aColumns + " did not match B:Columns " + bRows + ".");
+	        	System.out.println("Bledne rozmiary maciezry"); 
 	        }
 
 	        int[][] C = new int[aRows][bColumns];
@@ -33,16 +38,13 @@ public class Macierz {
 
 	        return C;
 	    }
-	 public static int[][] sub(int[][] A, int[][] B) {
-
-	        int aRows = A.length;
-	        int aColumns = A[0].length;
+	 public  int[][] sub( int[][] B) {
 	        int bRows = B.length;
 	        int bColumns = B[0].length;
 
 	        if (aColumns != bColumns || aRows != bRows ) {
-	            throw new IllegalArgumentException("A:Rows: " + aColumns + " did not match B:Columns " + bRows + ".");
-	        }
+	        	System.out.println("Bledne rozmiary macierzy"); 
+	        	}
 
 	        int[][] C = new int[aRows][bColumns];
 	        for (int i = 0; i < aRows; i++) {
@@ -61,15 +63,13 @@ public class Macierz {
 
 	        return C;
 	    }
-	 public static int[][] mul(int[][] A, int[][] B) {
+	 public int[][] mul(int[][] B) {
 
-	        int aRows = A.length;
-	        int aColumns = A[0].length;
 	        int bRows = B.length;
 	        int bColumns = B[0].length;
 
 	        if (aColumns != bRows) {
-	            throw new IllegalArgumentException("A:Rows: " + aColumns + " did not match B:Columns " + bRows + ".");
+	        	System.out.println("Bledne rozmiary macierzy");       
 	        }
 
 	        int[][] C = new int[aRows][bColumns];
@@ -95,5 +95,6 @@ public class Macierz {
 	                System.out.print(m[i][j] + " ");
 	            System.out.println();
 	        }
+	        System.out.println();
 }
 }
