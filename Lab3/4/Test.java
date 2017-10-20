@@ -1,14 +1,13 @@
 package myPackage;
-import javax.mail.Transport;
 public class Test {
     public static void main(String args[]) {
     	EmailMessage wiadomosc = null;
         try {
         	wiadomosc = EmailMessage.builder()
-        			  .addFrom("bobek@agh.edu.pl")
+        			  .addFrom("pewienpanppp@gmail.com")
         			  .addTo("sophistic4ted@gmail.com")
-        			  .addSubject("Mail testowy")
-        			  .addContent("Brak tresci")
+        			  .addSubject("Hello Mail")
+        			  .addContent("Czesc Pszemek")
         			  .build();
                     
         } catch (Exception e) {

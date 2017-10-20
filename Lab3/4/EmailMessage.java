@@ -88,9 +88,21 @@ public class EmailMessage {
 
 //ze strony tutorialspoint
     public void send() {
-        Properties properties = System.getProperties();
-        properties.setProperty("mail.smtp.host", "localhost");
-        Session session = Session.getDefaultInstance(properties);
+    	final String username = "PewienPanPPP";
+        final String password = "123456789kamil";
+        Properties properties = new Properties();
+        properties.put("mail.smtp.ssl.trust", "smtp.gmail.com");
+        properties.put("mail.smtp.auth", "true");
+        properties.put("mail.smtp.starttls.enable", "true");
+        properties.put("mail.smtp.host", "smtp.gmail.com");
+        properties.put("mail.smtp.port", "587");
+        Session session = Session.getInstance(properties,
+                new javax.mail.Authenticator() {
+                  protected PasswordAuthentication getPasswordAuthentication() {
+                      return new PasswordAuthentication(username, password);
+                  }
+                });
+   
 
         try {
             MimeMessage message = new MimeMessage(session);
