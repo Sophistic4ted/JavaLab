@@ -21,6 +21,11 @@ public class Main {
 
 	            switch (input) {
 	                case "1":
+	                		                    
+	                    System.out.println("Podaj typ pracownika: "
+	                    		+ "\nStudent(1) "
+	                    		+ "\nPracownik Etatowy(2): ");
+	                    int typ = Integer.valueOf(scan.nextLine());
 	                	System.out.println("Podaj PESEL (Przykladowe pesele)\n"+
 	                			"90090515836\n" +
 	                			"92071314764\n" +
@@ -28,22 +33,25 @@ public class Main {
 	                			"81100216357\n"
 	                			);	                	
 	                    String pesel = scan.nextLine();	                    
-	                    System.out.println("Podaj wynagrodzenie brutto");
+	                    System.out.println("Podaj wynagrodzenie brutto: ");
 	                    double brutto = Double.valueOf(scan.nextLine());
 					try {
-						k1.dodaj(new PracownikEtatowy(pesel,brutto));
-						System.out.println("Dodano Pracownika");
-		                break;
+						if (typ == 1) {
+							k1.dodaj(new Student(pesel,brutto));
+						}else if (typ == 2) {
+							k1.dodaj(new PracownikEtatowy(pesel,brutto));
+						}
 					} catch (WrongPeselException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
-	                   
+						System.out.println("Dodano Pracownika! ");
+		                break;
 	                case "2":
 	                	k1.wypisz_pracownikow();
 	                    break;
 	                case "3":
-	                	System.out.println("Podaj pesel Pracownika do wyswietlenia:");
+	                	System.out.println("Podaj pesel Pracownika do wyswietlenia: ");
 	                	String peselz = scan.nextLine();
 	                	k1.szukaj(peselz);
 	                	break;
@@ -51,7 +59,7 @@ public class Main {
 	                	k1.porownaj();
 	                    break;
 	                case "5":
-	                	System.out.println("Podaj pesel Pracownika do usuniecia:");
+	                	System.out.println("Podaj pesel Pracownika do usuniecia: ");
 	                	String peselu = scan.nextLine();
 	                	k1.usun(peselu);
 	                	break;

@@ -15,6 +15,7 @@ public class Kadry {
 		 }
 		 return false;
 	 }
+
 	 void usun(String pesel_zwolnionego) {
 		 if (exists(pesel_zwolnionego)) {
 			 pracownicy.removeIf(obj ->  pesel_zwolnionego.equals(obj.getPesel()));

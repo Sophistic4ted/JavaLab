@@ -10,5 +10,11 @@ public class Student extends Pracownik {
 	double oblicz_wynagrodzenieNetto() {
 		return wynagrodzenieBrutto*0.8;
 	}
-
+	void getString() {		 
+		System.out.println("Pesel: " + pesel.getpestring() +
+				"\nTyp pracownika: " + "Student"+
+				"\nWynagrodzenie Brutto: " + this.wynagrodzenieBrutto +
+				"\nWynagrodzenie Netto: " + oblicz_wynagrodzenieNetto()
+				);
+	}
 }
